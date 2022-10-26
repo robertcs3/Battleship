@@ -1,14 +1,16 @@
 /* Create ship objects */
 const Ship = (length) => {
+    let hitCount = 0;
 
     const hit = () => {
-        let count = 0;
-        count++;
-        return count;
+        if (hitCount <= length) {
+            hitCount++;
+        }
+        return hitCount;
     }
 
     const isSunk = () => {
-        if(hit == length) return true;
+        if(hitCount == length) return true;
     }
 
     return {hit, isSunk};
